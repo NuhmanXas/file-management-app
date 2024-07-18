@@ -8,6 +8,8 @@ import image from '../Assets/file_image.png'
 import { FaPlay } from "react-icons/fa";
 import IconCombo, { IconComboList } from "../Components/IconCombo";
 import { FaUserFriends } from "react-icons/fa";
+import { media } from "../Services";
+import Image from "../Components/Image";
 
 function HomePage() {
 
@@ -38,7 +40,7 @@ function HomePage() {
           <TopBar />
           <div className="body-container flex-grow-1 d-flex align-items-center">
             <div className="row p-5 d-flex justify-content-center">
-              <div className="col-lg-5 ps-5 d-flex flex-column justify-content-center">
+              <div className="col-lg-5 col-md-12 ps-5 d-flex flex-column justify-content-center">
                 <Typography
                   text="Organize your files and keep them safe, everywhere!"
                   type="h1"
@@ -61,8 +63,14 @@ function HomePage() {
 
                 <IconComboList list={getIconComboList()} />
               </div>
-              <div className="col-lg-6 d-flex justify-content-center align-items-center">
-                <img src={image} />
+              <div className="col-lg-6 col-md-12 d-flex justify-content-center align-items-center mt-sm-5">
+                {/* <img src={image} alt="Image" /> */}
+                <Image
+                  src={image}
+                  xxlSize={"85%"}
+                  xlSize={"90%"}
+                  mdSize={"90%"}
+                />
               </div>
             </div>
           </div>
@@ -73,6 +81,7 @@ function HomePage() {
 
 
 const HomePageStyle = styled.div`
+
   
 `;
 

@@ -37,7 +37,7 @@ function TopBar() {
     );
 }
 
-const TopBarStyle = styled.div`
+const TopBarStyle = styled.section`
   
 `;
 

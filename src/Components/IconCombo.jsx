@@ -1,15 +1,13 @@
 import styled from "styled-components";
 
-function IconCombo({ icon , text1 , text2 , ...props }) {
-    return (
-      <IconComboStyle {...props}>
-        <div className="icon-combo-container">
-          <div className="icon">{icon}</div>
-          <div className="text1">{text1}</div>
-          <div className="text2">{text2}</div>
-        </div>
-      </IconComboStyle>
-    );
+function IconCombo({ icon, text1, text2, className, ...props }) {
+  return (
+    <IconComboStyle className={`icon-combo-container ${className}`} {...props}>
+      <div className="icon">{icon}</div>
+      <div className="text1">{text1}</div>
+      <div className="text2">{text2}</div>
+    </IconComboStyle>
+  );
 }
 
 const IconComboStyle = styled.div`
@@ -36,19 +34,33 @@ const IconComboStyle = styled.div`
 
 export default IconCombo;
 
-
-export function IconComboList({ list = []}) {
-    return ( <IconComboListStyle className="d-flex mt-5 gap-5" >
-        {
-            list.map(({icon , text1 , text2} , i) => <IconCombo key={i} className={`icon-combo ${ i != (list.length -1) ? "icon-combo-border" : "" } `} icon={icon} text1={text1} text2={text2} />)
-        }
-    </IconComboListStyle> );
+export function IconComboList({ list = [], className }) {
+  return (
+    <IconComboListStyle className={`d-flex mt-5 gap-5 ${className}`}>
+      {list.map(({ icon, text1, text2 }, i) => (
+        <IconCombo
+          key={i}
+          className={`icon-combo ${
+            i !== list.length - 1 ? "icon-combo-border" : ""
+          }`}
+          icon={icon}
+          text1={text1}
+          text2={text2}
+        />
+      ))}
+    </IconComboListStyle>
+  );
 }
 
 const IconComboListStyle = styled.div`
-  .icon-combo-border{
+  display: flex;
+  gap: 5px;
+
+  .icon-combo {
     position: relative;
-    &::after {
+  }
+
+  .icon-combo-border::after {
     content: "";
     display: block;
     width: 1px;
@@ -56,8 +68,7 @@ const IconComboListStyle = styled.div`
     background-color: #272c34;
     border-radius: 2px;
     position: absolute;
-    top: 0px;
+    top: 0;
     right: -20px;
-    }
   }
 `;
