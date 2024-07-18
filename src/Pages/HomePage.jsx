@@ -9,8 +9,11 @@ import { FaPlay } from "react-icons/fa";
 import  { IconComboList } from "../Components/IconCombo";
 import { FaUserFriends } from "react-icons/fa";
 import Image from "../Components/Image";
+import { useNavigate } from "react-router-dom";
 
 function HomePage() {
+
+  const navigator = useNavigate();
 
     const getIconComboList = () => {
         return [
@@ -31,7 +34,10 @@ function HomePage() {
             }
         ]
     }
-
+    
+    const handleGetStart = () => {
+      navigator("/dashboard")
+    }
 
     return (
       <HomePageStyle>
@@ -52,7 +58,11 @@ function HomePage() {
                   className="col-lg-8 mt-3"
                 />
                 <div className="button-container d-flex gap-3 mt-5">
-                  <Button text="Get Started" buttonType="style-1" />
+                  <Button
+                    text="Get Started"
+                    onClick={handleGetStart}
+                    buttonType="style-1"
+                  />
                   <Button
                     text="Request a demo"
                     icon={<FaPlay className="me-3" />}

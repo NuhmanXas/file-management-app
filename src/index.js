@@ -10,6 +10,7 @@ import HomePage from './Pages/HomePage';
 import HowItWorksPage from './Pages/HowItWorksPage';
 import FAQPage from './Pages/FAQPage';
 import PricingPage from './Pages/PricingPage';
+import DashboardLayout from './Components/DashboardLayout';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: "/pricing",
     element: <PricingPage />,
+  },
+  {
+    path: "/dashboard",
+    element: <DashboardLayout />,
   },
 ]);
 
