@@ -6,9 +6,8 @@ import TopBar from "../Components/TopBar";
 import Typography from "../Components/Typography";
 import image from '../Assets/file_image.png'
 import { FaPlay } from "react-icons/fa";
-import IconCombo, { IconComboList } from "../Components/IconCombo";
+import  { IconComboList } from "../Components/IconCombo";
 import { FaUserFriends } from "react-icons/fa";
-import { media } from "../Services";
 import Image from "../Components/Image";
 
 function HomePage() {

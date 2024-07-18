@@ -7,13 +7,28 @@ import reportWebVitals from './reportWebVitals';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HomePage from './Pages/HomePage';
+import HowItWorksPage from './Pages/HowItWorksPage';
+import FAQPage from './Pages/FAQPage';
+import PricingPage from './Pages/PricingPage';
 
 const router = createBrowserRouter([
   {
-    path : "/",
-    element:<HomePage />
-  }
-])
+    path: "/",
+    element: <HomePage />,
+  },
+  {
+    path: "/work",
+    element: <HowItWorksPage />,
+  },
+  {
+    path: "/faq",
+    element: <FAQPage />,
+  },
+  {
+    path: "/pricing",
+    element: <PricingPage />,
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
