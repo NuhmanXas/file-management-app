@@ -7,15 +7,11 @@ import { FaFileAlt } from "react-icons/fa";
 function SuggestionsList({ list = [] , className , ...props }) {
     return (
       <SuggestionsListStyle
-        className={` d-flex gap-3 ${className}`}
+        className={` d-flex justify-content-between gap-3 ${className}`}
         {...props}
       >
         {list.map(({ name, url }, i) => (
-          <Suggestions
-            key={i}
-            name={name}
-            url={url}
-          />
+          <Suggestions key={i} name={name} url={url} />
         ))}
       </SuggestionsListStyle>
     );
@@ -30,7 +26,7 @@ export default SuggestionsList;
 
 function Suggestions({ name , url }) {
   return (
-    <SuggestionsStyle className="p-3 rounded-2">
+    <SuggestionsStyle className="p-3 flex-grow-1 rounded-2">
       <img src={url} alt={name} />
       <section className="file-name-container d-flex align-items-center gap-3">
         <FaFileAlt className="icon" />

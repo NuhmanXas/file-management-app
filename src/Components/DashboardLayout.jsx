@@ -145,7 +145,7 @@ function DashboardLayout({ children }) {
     <DashboardLayoutStyle>
       <FullPageLayout>
         <div className="row min-vh-100">
-          <section className="side-bar-container col-xl-2 col-lg-3 d-flex flex-column ps-5 justify-content-start pt-4">
+          <section className="side-bar-container sticky-top vh-100 col-xxl-2 col-xl-3 col-lg-3 d-flex flex-column ps-5 justify-content-start pt-4">
             <Logo />
 
             <DashboardNav title="File manager" navList={getFileManagerList()} />
@@ -175,8 +175,8 @@ function DashboardLayout({ children }) {
               />
             </div>
           </section>
-          <section className="col-xl-10 col-lg-9">
-            <div className="top-bar d-flex align-items-center">
+          <section className="col-xxl-10 col-xl-9 col-lg-9 ">
+            <div className="top-bar position-sticky sticky-top  d-flex align-items-center">
               <SearchBox text="Search..." width="35%" />
 
               <div className="ms-auto d-flex gap-3">
@@ -226,6 +226,7 @@ const DashboardLayoutStyle = styled.div`
   .top-bar {
     height: 120px;
     position: relative;
+    background-color: #181a1f;
 
     &::after {
       content: "";

@@ -6,7 +6,7 @@ import Typography from "./Typography";
 function MediaStorageSummaryList({ list = [] , className , ...props }) {
     return (
       <MediaStorageSummaryListStyle
-        className={` d-flex gap-3 ${className}`}
+        className={` d-flex justify-content-between gap-3 ${className}`}
         {...props}
       >
         {list.map(({ type, items, icon, space, percentage, color }, i) => (
@@ -33,7 +33,7 @@ export default MediaStorageSummaryList;
 
 function MediaStorageSummary({ type, items, icon, space, color, percentage }) {
   return (
-    <MediaStorageSummaryStyle className="p-3 rounded-2" color={color} percentage={percentage}>
+    <MediaStorageSummaryStyle className="p-3 flex-grow-1 rounded-2" color={color} percentage={percentage}>
       <section className="d-flex align-items-center">
         <div className="icon-con d-flex justify-content-center align-items-center me-3">
           {icon}
@@ -66,7 +66,6 @@ function MediaStorageSummary({ type, items, icon, space, color, percentage }) {
 
 const MediaStorageSummaryStyle = styled.div`
   background-color: #272c34;
-  width: 250px;
   min-height: 107px;
 
   .media-heading {
