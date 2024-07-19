@@ -12,6 +12,10 @@ export const getColorSchemes = () => {
     color3: {
       color: "#ffffff",
     },
+    color4: {
+      backColor: "#272c34",
+      color: "#ffffff",
+    },
   };
 };
 

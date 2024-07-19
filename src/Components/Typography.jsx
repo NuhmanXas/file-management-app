@@ -37,7 +37,35 @@ const H3 = styled.h1`
   font-family: "DM Sans", sans-serif;
 
   @media ${media.md} {
-    font-size: 35px;
+    font-size: 20px;
+  }
+`;
+
+
+
+const H4 = styled.h1`
+  color: ${(props) => props.color};
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 62px;
+  font-family: "DM Sans", sans-serif;
+
+  @media ${media.md} {
+    font-size: 18px;
+  }
+`;
+
+
+
+const H5 = styled.h1`
+  color: ${(props) => props.color};
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 62px;
+  font-family: "DM Sans", sans-serif;
+
+  @media ${media.md} {
+    font-size: 15px;
   }
 `;
 
@@ -64,6 +92,14 @@ function Typography({ text, type = "p", color = "#ffffff", ...props }) {
       <H3 color={color} {...props}>
         {text}
       </H3>
+    ) : type === "h4" ? (
+      <H4 color={color} {...props}>
+        {text}
+      </H4>
+    ) : type === "h5" ? (
+      <H5 color={color} {...props}>
+        {text}
+      </H5>
     ) : (
       <P color={color} {...props}>
         {text}

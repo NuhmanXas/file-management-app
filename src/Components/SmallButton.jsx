@@ -44,6 +44,12 @@ const SmallButtonStyle = styled.button`
     background-color: transparent;
     border: none;
   }
+
+  &.style-4 {
+    color: ${getColorSchemes().color4.color};
+    background-color: ${getColorSchemes().color4.backColor};
+    border: none;
+  }
 `;
 
 export default SmallButton;

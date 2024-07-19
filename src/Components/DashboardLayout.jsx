@@ -22,7 +22,7 @@ import TopIconDropDown from "./TopIconDropDown";
 import TopImageDropDown from "./TopImageDropDown";
 import UserImage from "../Assets/user.jpeg";
 
-function DashboardLayout() {
+function DashboardLayout({ children }) {
   const getFileManagerList = () => [
     {
       title: "File Manager",
@@ -145,7 +145,7 @@ function DashboardLayout() {
     <DashboardLayoutStyle>
       <FullPageLayout>
         <div className="row min-vh-100">
-          <section className="side-bar-container col-lg-2 d-flex flex-column ps-5 justify-content-start pt-4">
+          <section className="side-bar-container col-xl-2 col-lg-3 d-flex flex-column ps-5 justify-content-start pt-4">
             <Logo />
 
             <DashboardNav title="File manager" navList={getFileManagerList()} />
@@ -175,7 +175,7 @@ function DashboardLayout() {
               />
             </div>
           </section>
-          <section className="col-lg-10">
+          <section className="col-xl-10 col-lg-9">
             <div className="top-bar d-flex align-items-center">
               <SearchBox text="Search..." width="35%" />
 
@@ -203,6 +203,8 @@ function DashboardLayout() {
                 />
               </div>
             </div>
+
+            <div className="mt-3 page-container">{children}</div>
           </section>
         </div>
       </FullPageLayout>
